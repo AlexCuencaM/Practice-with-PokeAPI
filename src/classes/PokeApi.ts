@@ -3,8 +3,8 @@ import Pokemon from './Pokemon'
 import PokemonRepository from "./PokemonRepository";
 export default class PokeApi implements PokemonRepository{
     getPokemon(id:number):Promise<Pokemon>{
-        return new Promise<Pokemon>((resolves)=>{
-            axios
+        return new Promise<Pokemon>(async (resolves)=>{
+            await axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
             .then(({data}: any) => {
                 resolves( new Pokemon(data.id,data.name,

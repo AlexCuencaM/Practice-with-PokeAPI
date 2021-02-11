@@ -12,16 +12,16 @@ function App() {
 				<Grid item lg={12}>
 					<Typography variant="h1">Poke API :D</Typography>
 				</Grid>				
-				<Grid lg={3}>
+				<Grid item lg={3}>
 					<Pokemon id={10}/>
 				</Grid>
-				<Grid lg={3}>
+				<Grid item lg={3}>
 					<Pokemon id={20}/>
 				</Grid>
-				<Grid lg={3}>
+				<Grid item lg={3}>
 					<Pokemon id={30}/>
 				</Grid>
-				<Grid lg={3}>
+				<Grid item lg={3}>
 					<Pokemon id={19}/>
 				</Grid>                
             </Grid>
