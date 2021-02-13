@@ -13,10 +13,10 @@ const data={
     weight:getRandomInt(),
 }
 export default class PokeApi implements PokemonRepository{
-    getPokemon(id:number):Promise<Pokemon>{
+    getPokemon(id:string):Promise<Pokemon>{
         return new Promise<Pokemon>(async (resolves)=>{            
-                resolves( new Pokemon(id,data.name,
-                    data.base_experience,data.height,data.weight))                
+                resolves( new Pokemon(parseInt(id),data.name,
+                    data.base_experience,data.height,data.weight,"#"))                
         })
     }
 }

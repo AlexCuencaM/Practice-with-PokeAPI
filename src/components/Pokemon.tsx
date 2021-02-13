@@ -18,12 +18,8 @@ const useStyles = makeStyles(() =>
         },
     })
 );
-type pokemon = {
-    id: number;
-    name?: string;
-    base_experience?: number;
-    height?: number;
-    weight?: number;
+type pokemon = {    
+    id: string;    
 };
 export default function PokemonCard({ id }: pokemon) {
     const [pokemon, setPokemon] = useState<Pokemon>();
@@ -31,7 +27,9 @@ export default function PokemonCard({ id }: pokemon) {
     useEffect(() => {
         async function api() {
             let repo: PokemonRepository = new PokeApi();
-            await repo.getPokemon(id).then((response) => setPokemon(response));
+            await repo.getPokemon(id)
+                .then((response) => setPokemon(response))
+                .catch(error=>alert("No se encontró su pokemon :c"))                
         }
         api()
     }, [id]);
@@ -40,6 +38,7 @@ export default function PokemonCard({ id }: pokemon) {
             <Typography variant="h3" className={classes.h3}>
                 {pokemon?.name}
             </Typography>
+            <img src={pokemon?.imageUrl} alt={pokemon?.name} height="150px" width="150px" />
             <Typography variant="body1">Id: {pokemon?.id}</Typography>
             <Typography variant="body1">Height: {pokemon?.height}</Typography>
             <Typography variant="body1">Weight: {pokemon?.weight}</Typography>
