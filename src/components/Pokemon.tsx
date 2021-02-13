@@ -1,17 +1,20 @@
-import { Card, createStyles, makeStyles, Typography } from "@material-ui/core";
+import { Card, createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import PokeApi from "../classes/PokeApi";
 //import PokeTest from "../classes/PokeTest";
 import Pokemon from "../classes/Pokemon";
 import PokemonRepository from "../classes/PokemonRepository";
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         paper: {
             padding: "1em",
             width: "90%",
             margin: "auto",
+            marginBottom:"1em",
             textAlign: "center",
+            borderTop:`50px solid ${theme.palette.primary.main}`,            
+
         },
         h3: {
             textTransform: "capitalize",

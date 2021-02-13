@@ -4,7 +4,7 @@ import Pokemon from "./Pokemon";
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
-      padding:"2em 0"
+      padding:"2em 0",      
     },
   }),
 );
@@ -12,16 +12,16 @@ const PokemonsList = () => {
 	const classes = useStyles()
     return (
         <Grid container justify="space-between" className={classes.root}>            
-            <Grid item lg={3}>
+            <Grid item lg={3} md={4} sm={6} xs={12}>
                 <Pokemon id={"10"} />
             </Grid>
-            <Grid item lg={3}>
+            <Grid item lg={3} md={4} sm={6} xs={12}>
                 <Pokemon id={"20"} />
             </Grid>
-            <Grid item lg={3}>
+            <Grid item lg={3} md={4} sm={6} xs={12}>
                 <Pokemon id={"30"} />
             </Grid>
-            <Grid item lg={3}>
+            <Grid item lg={3} md={4} sm={6} xs={12}>
                 <Pokemon id={"pikachu"} />
             </Grid>
         </Grid>

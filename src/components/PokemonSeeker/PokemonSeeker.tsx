@@ -23,14 +23,14 @@ export default function PokemonSeeker() {
     };
     return (
         <Grid container justify="center">
-            <Grid item lg={10}>
+            <Grid item lg={10} sm={12} xs={12}>
                 <PokemonSeekerForm
                     value={id}
                     handleClick={handleClick}
                     handleChange={handleChange}
                 />
             </Grid>
-            <Grid item lg={6} className={classes.root}>
+            <Grid item lg={6} sm={12} xs={12} className={classes.root}>
                 <PokemonCard id={value}/>
             </Grid>
         </Grid>

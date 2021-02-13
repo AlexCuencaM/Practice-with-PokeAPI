@@ -1,5 +1,6 @@
 import { Button, Grid, TextField } from "@material-ui/core";
 import React from "react";
+import SearchIcon from '@material-ui/icons/Search';
 
 interface Props {
     value: string
@@ -9,8 +10,8 @@ interface Props {
 
 const PokemonSeekerForm = (props: Props) => {
     return ( 
-            <Grid container justify="center" alignItems="center" spacing={2}>
-                <Grid item lg={4}>
+            <Grid container justify="center" alignItems="center">
+                <Grid item lg={4} sm={3} xs={6}>
                     <TextField
                         fullWidth
                         value={props.value}
@@ -19,8 +20,8 @@ const PokemonSeekerForm = (props: Props) => {
                         variant="outlined"
                     />
                 </Grid>
-                <Grid item lg={2}>
-                    <Button variant="contained" color="primary" onClick={props.handleClick}>Search</Button>
+                <Grid item lg={2} sm={3} xs={2}>
+                    <Button color="primary" onClick={props.handleClick}><SearchIcon/></Button>
                 </Grid>
             </Grid>        
     );
